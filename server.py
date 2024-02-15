@@ -2,7 +2,7 @@ import asyncio
 import logging
 from settings import server_ip, server_port
 
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s: %(message)s', level=logging.INFO)
+logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s: %(message)s", level=logging.INFO)
 
 class Server:
     def __init__(self) -> None:
@@ -27,7 +27,7 @@ class Server:
     async def check_expression(self, writer: asyncio.StreamWriter, expression: str) -> bool:
         parts = expression.split()
         
-        if parts[1] not in ["+", "-", "/", "*", "%", "^", "**"]:
+        if parts[1] not in ["+", "-", "/", "*", "%", "^", "**", "//"]:
             writer.write(str("недоступная операция").encode())
             logging.info(f"Результат не обработан: недоступная операция")
             await writer.drain()
@@ -64,6 +64,8 @@ class Server:
                 return first_num % second_num
             case "^" | "**":
                 return first_num ** second_num
+            case "//":
+                return first_num // second_num
             
     async def handle_client_request(self, writer: asyncio.StreamWriter, expression: str):
         client_ip, client_port = writer.get_extra_info("peername")

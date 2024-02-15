@@ -1,6 +1,6 @@
+from settings import server_ip, server_port
 import asyncio
 import logging
-from settings import server_ip, server_port
 
 logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s: %(message)s", level=logging.INFO)
 

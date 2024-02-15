@@ -38,7 +38,8 @@
 
 #### Клонирование репозитория
 
-Клонируйте репозиторий на свой локальный компьютер с помощью `git clone https://github.com/Ridgure/TwitchBot.git`
+Клонируйте репозиторий на свой локальный компьютер с помощью\
+`git clone https://github.com/edenhauss/quanttelecom-test.git`
 
 #### Настройка settings.py
 

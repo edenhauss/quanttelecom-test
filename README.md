@@ -36,6 +36,17 @@
 
 ### Перед тем, как начать
 
+#### Клонирование репозитория
+
+Клонируйте репозиторий на свой локальный компьютер с помощью `git clone https://github.com/Ridgure/TwitchBot.git`
+
+#### Настройка settings.py
+
+```
+server_ip = <ip-адрес> # по умолчанию - 127.0.0.1
+server_port = <порт> # по умолчанию - 50000
+```
+
 #### Необходимо установить:
 
 * [Python 3.10.x](https://www.python.org/downloads/release/python-3100/)
